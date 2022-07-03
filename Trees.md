@@ -14,7 +14,7 @@ Finally, the last two components of a basic tree structure are Leaf, and subtree
 
 ![Detailed Nodes](/Pictures/NodeDetail.png) 
 ## Binary Search Tree & Balanced Binary Searched Trees
-## Binary Search Tree
+### Binary Search Tree
 The next level up from a binary Tree is a Binary Search Tree, and a Balanced Binary Search Tree.  These Two have all of the same qualities as a Binary Tree, however the only differences is that the order the information is entered into the tree matters. For a Binary Search Tree, The first piece of information is the "Root". The Second piece of information gets compared to the root, and then if it is less than the root, we put it on the left, and if it is greater than the root we put it on the right. To get a deeper understanding, let's work through some examples. Given The Following Tree, we will work through adding the following numbers into it: 1 and 27
 ![TreeExample1](/Pictures/TreeExample1.png)
 To add 1, we look at 25, and compare to see if 1 is bigger than or less than 25. Since it's less than, we move to the right. We then do the same comparison on 15, and since it is smaller we go to the left again. Finally, we do the same comparison to 10, and since it is smaller we add it to the left of 10. 
@@ -26,9 +26,76 @@ One thing you may have noticed is that no matter what tree or subtree you look a
 
 ### Balanced Binary Search Trees
 A Balanced binary search tree is the ideal form of a binary search tree, where there are about the same amount of nodes on the left side of the tree as there are on the right side. There exists several algorithms to reorganize these trees after made. For either search tree, looking up and storing information is about O(log n) in performance, making it a very efficent way to store alot of numbers, however it does run the risk that if the first number you add is smaller or bigger than the rest of the numbers, it will create an unbalanced tree. This is where using those sorting algorithms can come into play. 
+## Examples
+* Find Data
+```
+class BST:
+    """
+    Implement the Binary Search Tree (BST) data structure.  The Node 
+    class below is an inner class.  An inner class means that its real 
+    name is related to the outer class.  To create a Node object, we will 
+    need to specify BST.Node
+    """
 
+    class Node:
+        """
+        Each node of the BST will have data and links to the 
+        left and right sub-tree. 
+        """
 
-but still have O(log n) in lookup and storage. This is only in a balanced search tree, hwoever.
-* Binary Search Tree, Binary Tree, Balanced Binary Search Tree
-## Example
+        def __init__(self, data):
+            """ 
+            Initialize the node to the data provided.  Initially
+            the links are unknown so they are set to None.
+            """
+       
+            self.data = data
+            self.left = None
+            self.right = None
+
+    def __init__(self):
+        """
+        Initialize an empty BST.
+        """
+        self.root = None
+    def __contains__(self, data):
+        """ 
+        Checks if data is in the BST.  This function
+        supports the ability to use the 'in' keyword:
+
+        if 5 in my_bst:
+            ("5 is in the bst")
+
+        """
+        return self._contains(data, self.root)  # Start at the root
+
+    def _contains(self, data, node):
+        """
+        This funciton will search for a node that contains
+        'data'.  The current sub-tree being search is 
+        represented by 'node'.  This function is intended
+        to be called the first time by the __contains__ function.
+        """
+        if data == node.data:
+                return True
+        if data < node.data:
+            # The data belongs on the left side.
+            if node.left is None:
+                # We found an empty spot
+                return False
+            else:
+                # Need to keep looking.  Call _insert
+                # recursively on the left sub-tree.
+                return self._contains(data, node.left)
+        else:
+            # The data belongs on the right side.
+            if node.right is None:
+                # We found an empty spot
+                return False
+            else:
+                # Need to keep looking.  Call _insert
+                # recursively on the right sub-tree.
+                return self._contains(data, node.right)        
+```
 ## Problem to Solve
+* When given a number into an "Insert" Function, write a function that will recursively go through the table, and see if the current number should go to the right, or left of the current node. 
