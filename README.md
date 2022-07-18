@@ -2,10 +2,10 @@
 ## I. [Welcome]()
 * Introduction
 * Contact Information
-## II. [Stacks]()
+## II. [Stacks](Stacks.md)
 * Introduction
-* Order of Insertions and removal
-* Operations (Push, Pop, size, empty)
+* Common Operations
+* Big O Notation
 * Example
 * Problem to Solve
 ## III. [Sets]()
