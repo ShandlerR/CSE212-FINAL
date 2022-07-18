@@ -1,5 +1,5 @@
 # Data Structure Tutorial
-## I. [Welcome]()
+## I. [Welcome](Welcome.md)
 * Introduction
 * Contact Information
 ## II. [Stacks](Stacks.md)
@@ -8,7 +8,7 @@
 * Big O Notation
 * Example
 * Problem to Solve
-## III. [Sets]()
+## III. [Sets](Sets.md)
 * Introduction
 * Hashing
 * Operations
