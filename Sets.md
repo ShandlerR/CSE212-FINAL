@@ -16,4 +16,21 @@ With the current set, what happens when we have two pieces of data that would be
 |member(value)|Determine if a value is in the Set|if value in my_set:|O(1)|
 |size()| Return the number of elements in the set|length = len(my_set)|O(1)|
 ## Example
+Maximum and Minimum Value
+Say we have a program that is record the speed of a car during a race. We then take all of this information and put it into a set. We want to code a program that will tell us what the fastest and slowest speed of the car is. This program can look like:
+```
+speeds_mph = {100,50,10,200,...}
+print(max(speeds_mph))
+print(min(speeds_mph))
+```
 ## Problem to Solve
+Say we have a list of 10 numbers. we want a program that will check if our list contains duplicates. Write a program that will utilize a set in order to find out whether or not our list contains duplicate numbers. HINT: Sets can only hold unique values in them.
+## Sample Solution
+```
+numbers = [10, 5, 10, 2, 4, 8, 9, 1, 3, 7]
+numbers_set = set(numbers)
+if len(numbers_set) != len(numbers):
+    print("Numbers contains duplicates")
+else:
+    print("Numbers contains no duplicates")
+``` 
