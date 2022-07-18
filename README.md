@@ -11,7 +11,7 @@
 ## III. [Sets](Sets.md)
 * Introduction
 * Hashing
-* Operations
+* Big O Notation
 * Example
 * Problem to Solve
 ## IV. [Trees](Trees.md)
