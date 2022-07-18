@@ -13,7 +13,7 @@ Finally, the last two components of a basic tree structure are Leaf, and subtree
 <br>
 
 ![Detailed Nodes](/CSE212-FINAL/Pictures/NodeDetail.png) 
-## Binary Search Tree & Balanced Binary Searched Trees
+## Binary Search Tree & Balanced Binary Search Trees
 ### Binary Search Tree
 The next level up from a binary Tree is a Binary Search Tree, and a Balanced Binary Search Tree.  These Two have all of the same qualities as a Binary Tree, however the only differences is that the order the information is entered into the tree matters. For a Binary Search Tree, The first piece of information is the "Root". The Second piece of information gets compared to the root, and then if it is less than the root, we put it on the left, and if it is greater than the root we put it on the right. To get a deeper understanding, let's work through some examples. Given The Following Tree, we will work through adding the following numbers into it: 1 and 27
 ![TreeExample1](/CSE212-FINAL/Pictures/TreeExample1.png)
