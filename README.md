@@ -14,7 +14,7 @@
 * Operations
 * Example
 * Problem to Solve
-## IV. [Trees](/CSE212-FINAL/Trees.md)
+## IV. [Trees](Trees.md)
 * Introduction
 * Root, Leaf, Parent, Child, Subtree
 * Binary Search Tree and Balacned Binary Search Tree
