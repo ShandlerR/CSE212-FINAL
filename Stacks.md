@@ -34,7 +34,20 @@ Total_Money_Spent = len(Workers) * (Money_per_hour * Hours_per_week)
 ```
 In this example, we are assuming that everyone has the same pay check and the same amount of hours. this may not be true in all circumstances, but if these numbers are averaged out it will at least give us an estimate. In this example, `len(Workers)` will return that we have a staff of 4 members in order to do our calculations on. 
 ### empty()
-Our Final Example is probably the most basic operation that can be done on any data structure: empty. The empty operation is used to determain if there are any 
+Our Final Example is probably the most basic operation that can be done on any data structure: empty. The empty operation is used to determain if there are any elements in our list. Technically, we could do this check by using the Size functionality, and seeing if the size is 0. However, another way we can do the check is to do a basic if statement on a list. In python, if you do an if statement on a list, if the list is empty it will return false, and if it has data in it, it will return true. 
+```
+empty_stack = []
+filled_stack = [1,5,2,1,7]
+if empty_stack:             #Will Return False, therefore "print("stack empty") will be put on the console"
+    print("stack filled")
+else:
+    print("stack empty")
+
+if filled_stack:            #Will return True, therefore print("stack filled") will be put on the console
+    print("stack filled")
+else:
+    print("stack empty")
+```
 ## Big O Notation
 |Common Stack Operation|Performance|
 |--------------------|-----------|
@@ -43,19 +56,40 @@ Our Final Example is probably the most basic operation that can be done on any d
 |size()|O(1)|
 |empty()|O(1)|
 ## Example
-Explanation
+For this example, Let's pretend we have a stack that contains everything that we are buying on a shopping trip. For this example, we want to put the item in our cart from the shelf, however we also want to make sure that our frozen items have the least amount of time in warmth, Therefore, we should add them in last. When we put the items in the fridge at the end of our trip, the first out of the trunk should be the frozen items. In our example, our code should look like this:
 ```
-code
+shopping_cart = []
+shopping_cart.push("Oats")
+shopping_cart.push("Cereal")
+print(shopping_cart) #['Oats', 'Cereal']
+shopping_cart.push("Eggs")
+shopping_cart.push("Milk")
+shopping_cart.push("Frozen Chicken")
+print(shopping_cart) #['Oats', 'Cereal', 'Eggs', 'Milk', 'Frozen Chicken']
+
+print("arrived Home!")
+
+fridge = []
+
+while shopping_cart:
+    fridge.push(shopping_cart.pop)
+
+print(fridge) ['Frozen Chicken', 'Milk', 'Eggs', 'Cereal', 'Oats']
+
 ```
 ## Problem to Solve
-Problem Defintion
+For this problem, I want you to pretend you are a chef feeding a greedy customer. You want to make sure that the customer enjoys as much as the meal as possible, and that they always gets their food hot, therefore whatever is made most current should be the first thing that the customer gets. Write a program that will make sure that whatever you have made most recent is the first thing that the customer recieves. However, for this program also make sure we are tracking how hot the food is on a scale of one to three.
 ## Example Solution
 ```
-code
+prepared_food = {}
+plate = {}
+prepared_food["chicken"] = 3
+prepared_food["shrimp"] = 2
+
+plate["shrimp"] = prepared_food.pop("shrimp")
+plate["chicken"] = prepared_food.pop("chicken")
+
+print(prepared_food) #{}
+print(plate) #{'shrimp:2, chicken:3'}
+
 ```
-## II. [Stacks]()
-* Introduction
-* Order of Insertions and removal
-* Common Operations (Push, Pop, size, empty)
-* Example
-* Problem to Solve
